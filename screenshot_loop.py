@@ -1,8 +1,10 @@
-import mss
+# Replaced with updated code and customized monitor specs
+
 import cv2
 import time
 import os
-import pyscreenshot as ImageGrab
+from PIL import ImageGrab
+
 start_time = time.time()
 display_time = 0.5
 
@@ -14,23 +16,20 @@ def ensure_dir():
 
 ensure_dir()
 
-monitor = {"top": 40, "left": 0, "width": 800, "height": 640}
-title = "FPS benchmark"
-
-sct = mss.mss()
 img = 0
 mob = 'cow'
-while True:
+while img < 10:
+
     # -- include('examples/showgrabfullscreen.py') --#
 
     if __name__ == '__main__':
         # grab fullscreen
-        im = ImageGrab.grab([0,0,1280,1024])
+        im = ImageGrab.grab([0, -1075, 1920, 0], all_screens=True)
         # save image file
-        im.save(r'./datasets/osrs/' + mob + '_' + str(img) + '.jpg', 'jpg')
+        im.save(r'./datasets/osrs/' + mob + '_' + str(img) + '.jpg', 'jpeg')
 
         # show image in a window
-        #im.show()
+        # im.show()
     # -#
     img += 1
 
